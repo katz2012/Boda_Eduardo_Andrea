@@ -1,3 +1,15 @@
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxOnW7kkmMHIuDbze8ehX7-tuQoTC68zu3jWerAjS-5PN3u0TAQnKADDVejNyBu9n5VOQ/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit',e => {
+    e.preventDefault()
+    fetch(scriptURL, {method: 'POST', body: new FormData(form)})
+    .then(response => alert("Gracias por confirmar tu asistencia!"))
+    .then(() => {window.location.reload(); })
+    .catch(error => console.error('Error!',error.message))
+})
+
 const storage = (table) => {
 
     if (!localStorage.getItem(table)) {
