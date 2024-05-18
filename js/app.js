@@ -42,7 +42,7 @@ const storage = (table) => {
         has,
     };
 };
-
+/*
 const request = (method, path) => {
 
     let url = document.querySelector('body').getAttribute('data-url');
@@ -81,6 +81,7 @@ const request = (method, path) => {
         },
     };
 };
+*/
 
 const util = (() => {
 
