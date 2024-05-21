@@ -23,6 +23,21 @@ body::-webkit-scrollbar {
     color: #ffffff !important;
 }
 
+.img-schedule {
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0%;
+}
+
+.img-schedule>img {
+    display: inline;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+}
+
 .img-crop {
     width: 14rem;
     height: 14rem;
