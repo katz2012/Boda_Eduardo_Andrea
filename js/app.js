@@ -42,7 +42,7 @@ const storage = (table) => {
         has,
     };
 };
-/*
+
 const request = (method, path) => {
 
     let url = document.querySelector('body').getAttribute('data-url');
@@ -81,7 +81,6 @@ const request = (method, path) => {
         },
     };
 };
-*/
 
 const util = (() => {
 
@@ -177,35 +176,42 @@ const util = (() => {
         document.getElementById('nama-tamu').appendChild(div);
     };
 
-    const animation = async () => {
-        const duration = 10 * 1000;
+    const animation = () => {
+        const duration = 50 * 1000;
         const animationEnd = Date.now() + duration;
-        let skew = 1;
+        const colors = ["#FFC0CB", "#FF1493", "#C71585"];
 
-        let randomInRange = (min, max) => {
+        const randomInRange = (min, max) => {
             return Math.random() * (max - min) + min;
         };
 
-        (async function frame() {
+        /*const heart = confetti.shapeFromPath({
+            path: 'M167 72c19,-38 37,-56 75,-56 42,0 76,33 76,75 0,76 -76,151 -151,227 -76,-76 -151,-151 -151,-227 0,-42 33,-75 75,-75 38,0 57,18 76,56z',
+            matrix: [0.03333333333333333, 0, 0, 0.03333333333333333, -5.566666666666666, -5.533333333333333]
+        });*/
+
+        (function frame() {
             const timeLeft = animationEnd - Date.now();
-            const ticks = Math.max(200, 500 * (timeLeft / duration));
 
-            skew = Math.max(0.8, skew - 0.001);
-
-            await confetti({
-                particleCount: 1,
-                startVelocity: 0,
-                ticks: ticks,
-                origin: {
-                    x: Math.random(),
-                    y: Math.random() * skew - 0.2,
-                },
-                colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
-                shapes: ["heart"],
-                gravity: randomInRange(0.5, 1),
-                scalar: randomInRange(1, 2),
-                drift: randomInRange(-0.5, 0.5),
+            colors.forEach((color) => {
+                confetti({
+                    particleCount: 1,
+                    startVelocity: 0,
+                    ticks: Math.max(15, 75 * (timeLeft / duration)),
+                    origin: {
+                        x: Math.random(),
+                        y: Math.abs(Math.random() - (timeLeft / duration)),
+                    },
+                    zIndex: 1057,
+                    shapes: ["heart"],
+                    colors: [color],
+                    drift: randomInRange(-0.5, 0.5),
+                    gravity: randomInRange(0.5, 1),
+                    scalar: randomInRange(0.5, 1),
+                });
             });
+
+            const aux = 0;
 
             if (timeLeft > 0) {
                 requestAnimationFrame(frame);
@@ -227,12 +233,13 @@ const util = (() => {
         document.getElementById('tombol-musik').style.display = 'block';
         timer();
 
-        await confetti({
-            origin: { y: 0.8 },
-            zIndex: 1057
-        });
-        await session.check();
-        await animation();
+        /*confetti({
+            origin: { y: 1 },
+            zIndex: 1057,
+        });*/
+
+
+        setTimeout(animation(),10000);
     };
 
     const show = () => {
@@ -257,7 +264,8 @@ const util = (() => {
         salin,
         escapeHtml,
         show,
-        animate
+        animate,
+        animation,
     };
 })();
 

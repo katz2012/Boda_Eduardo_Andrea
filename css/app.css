@@ -15,12 +15,12 @@ body::-webkit-scrollbar {
 
 .font-esthetic {
     font-family: 'Sacramento', cursive !important;
-    color: #ffffff !important;
+    color: #111111 !important;
 }
 
 .font-arabic {
     font-family: 'Noto Naskh Arabic', serif !important;
-    color: #ffffff !important;
+    color: #111111 !important;
 }
 
 .img-schedule {
@@ -80,7 +80,7 @@ body::-webkit-scrollbar {
     inset: 0 !important;
     width: 100%;
     height: 100%;
-    background-color: #CABAD4;
+    background-color: #DBD3EB;
     z-index: 1056 !important;
 }
 
@@ -91,7 +91,7 @@ body::-webkit-scrollbar {
 .mouse-animation {
     padding: 0.25rem 0.625rem;
     height: 2rem;
-    border: 0.1rem solid #ffffff;
+    border: 0.1rem solid #111111;
     border-radius: 1.4rem;
     opacity: 0.75;
     box-sizing: content-box;
@@ -117,7 +117,7 @@ body::-webkit-scrollbar {
     width: 0.25rem;
     height: 0.625rem;
     border-radius: 25%;
-    background-color: #ffffff;
+    background-color: #111111;
     animation-name: scroll;
     animation-duration: 2.5s;
     animation-timing-function: linear;
@@ -149,13 +149,31 @@ body::-webkit-scrollbar {
 }
 
 .dark-section {
-    background-color: #111111 !important;
+    background-color: #DBD3EB !important;
     margin-top: -0.5rem;
     margin-bottom: -0.5rem;
 }
 
+.text-light {
+    background-color: #FFFFFF !important;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+}
+
+.mb-0 {
+    color: #111111 !important;
+}
+
+.d-inline {
+    color: #111111 !important;
+}
+
+.icon-text {
+    color: #111111 !important;
+}
+
 footer {
-    background-color: #111111 !important;
+    background-color: #DBD3EB !important;
     margin-top: -0.5rem;
     padding-bottom: 5rem;
 }
