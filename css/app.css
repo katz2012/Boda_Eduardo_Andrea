@@ -1,5 +1,7 @@
 html {
     scroll-behavior: smooth !important;
+    scrollbar-width: none !important;
+    margin: 0 auto;
 }
 
 body {
@@ -7,6 +9,7 @@ body {
     padding: 0 !important;
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
+    margin: 0 auto;
 }
 
 body::-webkit-scrollbar {
@@ -82,6 +85,7 @@ body::-webkit-scrollbar {
     height: 100%;
     background-color: #DBD3EB;
     z-index: 1056 !important;
+    margin: 0 auto;
 }
 
 .card-body {
@@ -150,14 +154,12 @@ body::-webkit-scrollbar {
 
 .dark-section {
     background-color: #DBD3EB !important;
-    margin-top: -0.5rem;
-    margin-bottom: -0.5rem;
+    margin: auto;
 }
 
 .text-light {
     background-color: #FFFFFF !important;
-    margin-top: -0.5rem;
-    margin-bottom: -0.5rem;
+    margin: auto;
 }
 
 .mb-0 {
