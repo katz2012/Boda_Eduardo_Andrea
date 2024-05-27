@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth !important;
     scrollbar-width: none !important;
-    margin: 0 auto;
+    width: 100%;
 }
 
 body {
@@ -9,7 +9,6 @@ body {
     padding: 0 !important;
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
-    margin: 0 auto;
 }
 
 body::-webkit-scrollbar {
