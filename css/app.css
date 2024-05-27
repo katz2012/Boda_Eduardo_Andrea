@@ -154,12 +154,14 @@ body::-webkit-scrollbar {
 
 .dark-section {
     background-color: #DBD3EB !important;
-    margin: auto;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
 }
 
 .text-light {
     background-color: #FFFFFF !important;
-    margin: auto;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
 }
 
 .mb-0 {
