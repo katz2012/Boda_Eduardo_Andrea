@@ -268,7 +268,7 @@ const util = (() => {
         animation,
     };
 })();
-
+/*
 const progress = (() => {
 
     const assets = document.querySelectorAll('img');
@@ -282,7 +282,7 @@ const progress = (() => {
         loaded += 1;
 
         bar.style.width = Math.min((loaded / total) * 100, 100).toString() + "%";
-        info.innerText = `Loading assets (${loaded}/${total}) [${parseInt(bar.style.width).toFixed(0)}%]`;
+        info.innerText = `Cargando página (${loaded}/${total}) [${parseInt(bar.style.width).toFixed(0)}%]`;
 
         if (loaded == total) {
             util.show();
@@ -296,7 +296,7 @@ const progress = (() => {
             asset.addEventListener('load', () => progress());
         }
     });
-})();
+})();*/
 
 const audio = (() => {
     let audio = null;
