@@ -177,7 +177,7 @@ const util = (() => {
     };
 
     const animation = () => {
-        const duration = 50 * 1000;
+        const duration = 50 * 100;
         const animationEnd = Date.now() + duration;
         const colors = ["#FFC0CB", "#FF1493", "#C71585"];
 
