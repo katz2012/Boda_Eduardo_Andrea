@@ -111,7 +111,7 @@ const util = (() => {
             .replace(/'/g, '&#039;');
     };
 
-    const salin = (btn, msg = 'Tersalin', timeout = 1500) => {
+    const salin = (btn, msg = 'Copiado', timeout = 1500) => {
         navigator.clipboard.writeText(btn.getAttribute('data-nomer'));
 
         let tmp = btn.innerHTML;

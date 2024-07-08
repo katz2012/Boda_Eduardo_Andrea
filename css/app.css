@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 }
 
 .font-esthetic-clasic {
-    font-family: 'Wittgenstein', serif !important;
+    font-family: 'Clicker Script', cursive !important;
     color: #FFFFFF !important;
 }
 
@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
 }
 
 .font-arabic {
-    font-family: 'Noto Naskh Arabic', serif !important;
+    font-family: 'Wittgenstein', serif !important;
     color: #FFFFFF !important;
 }
 
@@ -211,7 +211,7 @@ body::-webkit-scrollbar {
 }
 
 .mb-0 {
-    color: #111111 !important;
+    color: #fffFFF !important;
 }
 
 .mb-0-home {
