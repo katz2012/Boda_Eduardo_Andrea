@@ -219,6 +219,7 @@ const util = (() => {
         })();
     };
 
+    
     const buka = async (button) => {
         button.disabled = true;
         document.querySelector('body').style.overflowY = 'scroll';
@@ -1017,6 +1018,7 @@ const comment = (() => {
         batal,
         balas,
         ubah,
-        kirim,
+        kirim
     };
 })();
+

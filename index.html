@@ -30,9 +30,9 @@
       <meta name="theme-color" content="#ffffff">
       <meta name="color-scheme" content="dark">
       <link rel="canonical" href="https://katz2012.github.io/Boda_Eduardo_Andrea/">
-      <link rel="shortcut icon" type="image/x-icon" href="https://katz2012.github.io/Boda_Eduardo_Andrea/assets/images/nosotros.jpeg">
-      <link rel="apple-touch-icon" sizes="192x192" type="image/png" href="https://katz2012.github.io/Boda_Eduardo_Andrea/assets/images/nosotros.jpeg">
-      <link rel="icon" type="image/x-icon" href="https://katz2012.github.io/Boda_Eduardo_Andrea/assets/images/nosotros.jpeg">
+      <link rel="shortcut icon" type="image/x-icon" href="https://katz2012.github.io/Boda_Eduardo_Andrea/assets/images/nosotros.jpg">
+      <link rel="apple-touch-icon" sizes="192x192" type="image/png" href="https://katz2012.github.io/Boda_Eduardo_Andrea/assets/images/nosotros.jpg">
+      <link rel="icon" type="image/x-icon" href="https://katz2012.github.io/Boda_Eduardo_Andrea/assets/images/nosotros.jpg">
       <!-- Preconnect and preload CDN -->
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" crossorigin="anonymous">
@@ -152,9 +152,9 @@
                      </div>
                   </div>
                   <h1 data-aos="fade-up" data-aos-duration="2000" class="font-esthetic-clasic py-4 px-2" style="font-size: 2rem">De la mano de Dios y nuestros padres</h1>
-                  <p data-aos="fade-up" data-aos-duration="2000" class="font-arabic pb-3 px-3" style="color: #FFFFFF;"> 
+                  <!--<p data-aos="fade-up" data-aos-duration="2000" class="font-arabic pb-3 px-3" style="color: #FFFFFF;"> 
                      Tenemos el agrado de invitarlos a nuestra boda religiosa y civil
-                  </p>
+                  </p>-->
                   <!-- Love animation -->
                   <div class="position-relative">
                      <div class="position-absolute" style="top: 0%; left: 10%;">
@@ -548,12 +548,22 @@
          <section class="m-0 p-0" id="ucapan">
             <div class="container">
             <div class="card-body border rounded-4 shadow p-3">
-               <form method="post" action="https://script.google.com/macros/s/AKfycbz9zGTTyIGanNJKJpf-58WuvDLHaAV5mNk2T7zqnpl4Svep_XzlaRfz6t7BrzwWTQjx5A/exec" name="contact-form">
+               <form method="post" action="https://script.google.com/macros/s/AKfycbz9zGTTyIGanNJKJpf-58WuvDLHaAV5mNk2T7zqnpl4Svep_XzlaRfz6t7BrzwWTQjx5A/exec" name="contact-form" autocomplete="off">
                   <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem;">Asistencia y mensajes</h1>
                   <div class="mb-1" id="balasan"></div>
-                  <div class="mb-3">
+                  <div class="mb-3" style="position: relative; color: #000;">
                      <label for="form-nama" class="form-label" style="color: #000;">Nombres</label>
-                     <input type="text" class="form-control shadow-sm" name="Nombres" id="form-nama" placeholder="Escriba aquí su nombre">
+                     <input type="text" name="Nombres" id="form-nama" placeholder="Escriba aquí su nombre" style="color: #000;">
+                  </div>
+                  <div class="mb-3" style="color: #000;">
+                     <label for="invitados" class="form-label" id="label-invitados" style="color: #000;">Número de pases</label>
+                     <input type="text" id="invitados" name="invitados" style="color: #000;" disabled>
+                        <!-- <option value="Elija número de pases" selected>Elija número de pases</option>
+                        <option value="1 Pase.">1 Pase.</option>
+                        <option value="2 Pases.">2 Pases.</option>
+                        <option value="3 Pases.">3 Pases.</option>
+                        <option value="4 Pases.">4 Pases.</option>
+                     </select>-->
                   </div>
                   <div class="mb-3" style="color: #000;">
                      <label for="form-kehadiran" class="form-label" id="label-kehadiran">Confirme su asistencia</label>
@@ -563,21 +573,125 @@
                         <option value="No">No</option>
                      </select>
                   </div>
-                  <div class="mb-3" style="color: #000;">
-                     <label for="invitados" class="form-label" id="label-invitados">Seleccione cuantas personas asistiran</label>
-                     <select class="form-select shadow-sm" id="invitados" name="invitados">
-                        <option value="Elija número de pases" selected>Elija número de pases</option>
-                        <option value="1 Pase.">1 Pase.</option>
-                        <option value="2 Pases.">2 Pases.</option>
-                        <option value="3 Pases.">3 Pases.</option>
-                        <option value="4 Pases.">4 Pases.</option>
-                     </select>
-                  </div>
                   <div class="mb-3">
                      <textarea name="form-pesan" class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Deje sus buenos deseos para los novios"></textarea>
                   </div>
                   <input type="submit" values="Enviar confirmación" id="submit" placeholder="Enviar">
                </form>
+               <script>
+                  function autocomplete(inp,inv, arr) {
+                     /*the autocomplete function takes two arguments,
+                     the text field element and an array of possible autocompleted values:*/
+                     var currentFocus;
+                     /*execute a function when someone writes in the text field:*/
+                     inp.addEventListener("input", function(e) {
+                         var a, b, i, val = this.value;
+                         /*close any already open lists of autocompleted values*/
+                         closeAllLists();
+                         if (!val) { return false;}
+                         currentFocus = -1;
+                         /*create a DIV element that will contain the items (values):*/
+                         a = document.createElement("DIV");
+                         a.setAttribute("id", this.id + "autocomplete-list");
+                         a.setAttribute("class", "autocomplete-items");
+                         /*append the DIV element as a child of the autocomplete container:*/
+                         this.parentNode.appendChild(a);
+                         /*for each item in the array...*/
+                         var arr_2 = [];
+                         
+                        for(var key in arr) {
+                           var aux = [];
+                           aux.push(arr[key][0],arr[key][1]);
+                           arr_2.push(aux);
+                        }
+
+                         for (i = 0; i < arr_2.length; i++) {
+                           /*check if the item starts with the same letters as the text field value:*/
+                           if (arr_2[i][0].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                             /*create a DIV element for each matching element:*/
+                             b = document.createElement("DIV");
+                             /*make the matching letters bold:*/
+                             b.innerHTML = "<strong>" + arr_2[i][0].substr(0, val.length) + "</strong>";
+                             b.innerHTML += arr_2[i][0].substr(val.length);
+                             /*insert a input field that will hold the current array item's value:*/
+                             b.innerHTML += "<input type='hidden' value='" + arr_2[i][0] + "'>";
+                             b.innerHTML += "<option type='hidden' value='" + arr_2[i][1] + "'>";
+                             /*execute a function when someone clicks on the item value (DIV element):*/
+                                 b.addEventListener("click", function(e) {
+                                 /*insert the value for the autocomplete text field:*/
+                                 inp.value = this.getElementsByTagName("input")[0].value;
+                                 inv.value = this.getElementsByTagName("option")[0].value;
+
+                                 /*close the list of autocompleted values,
+                                 (or any other open lists of autocompleted values:*/
+                                 closeAllLists();
+                             });
+                             a.appendChild(b);
+                           }
+                         }
+                     });
+                     /*execute a function presses a key on the keyboard:*/
+                     inp.addEventListener("keydown", function(e) {
+                         var x = document.getElementById(this.id + "autocomplete-list");
+                         if (x) x = x.getElementsByTagName("div");
+                         if (e.keyCode == 40) {
+                           /*If the arrow DOWN key is pressed,
+                           increase the currentFocus variable:*/
+                           currentFocus++;
+                           /*and and make the current item more visible:*/
+                           addActive(x);
+                         } else if (e.keyCode == 38) { //up
+                           /*If the arrow UP key is pressed,
+                           decrease the currentFocus variable:*/
+                           currentFocus--;
+                           /*and and make the current item more visible:*/
+                           addActive(x);
+                         } else if (e.keyCode == 13) {
+                           /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                           e.preventDefault();
+                           if (currentFocus > -1) {
+                             /*and simulate a click on the "active" item:*/
+                             if (x) x[currentFocus].click();
+                           }
+                         }
+                     });
+                     function addActive(x) {
+                       /*a function to classify an item as "active":*/
+                       if (!x) return false;
+                       /*start by removing the "active" class on all items:*/
+                       removeActive(x);
+                       if (currentFocus >= x.length) currentFocus = 0;
+                       if (currentFocus < 0) currentFocus = (x.length - 1);
+                       /*add class "autocomplete-active":*/
+                       x[currentFocus].classList.add("autocomplete-active");
+                     }
+                     function removeActive(x) {
+                       /*a function to remove the "active" class from all autocomplete items:*/
+                       for (var i = 0; i < x.length; i++) {
+                         x[i].classList.remove("autocomplete-active");
+                       }
+                     }
+                     function closeAllLists(elmnt) {
+                       /*close all autocomplete lists in the document,
+                       except the one passed as an argument:*/
+                       var x = document.getElementsByClassName("autocomplete-items");
+                       for (var i = 0; i < x.length; i++) {
+                         if (elmnt != x[i] && elmnt != inp) {
+                         x[i].parentNode.removeChild(x[i]);
+                       }
+                     }
+                   }
+                   /*execute a function when someone clicks in the document:*/
+                   document.addEventListener("click", function (e) {
+                       closeAllLists(e.target);
+                   });
+                   }
+                 
+                   var nombres = {cr32:["Cronwell Alarcón y Noemi Morales", 2],re28:["Renato Alarcón y Sandra León", 2],an31:["André Alarcón y Alessandra Cano", 2],al16:["Alejandra Zapata", 1],se27:["Severo Tineo y Ruth Alarcón", 2],da31:["Danny Tineo, Belú Robles e hija", 3],pa11:["Pavel Tineo", 1],re11:["Renzo Tineo", 1],ed37:["Edwin Alarcón Mundaca y Sonia Saldaña", 2],ke13:["Kevin Alarcón", 1],st16:["Stephany Alarcón", 1],je22:["Jesús y Roxana Alarcón", 2],os21:["Oscar Alarcón y Zulma", 2],da15:["Daniela Alarcón", 1],fa15:["Fabiola Alarcón", 1],hu21:["Hugo Morales y Blanca", 2],ar21:["Arnaldo y Evy Morales", 2],pa24:["Patricia Morales y Steve", 2],ch32:["Chris Peterson y Andrea Peterson", 2],ru20:["Rudy y Gina Gonzáles", 2],di21:["Diego y Flor Gonzáles", 2],ri25:["Ricky y Cristie Sepulveda", 2],ju22:["Junior Gonzáles y Lina", 2],jo26:["Jorge Morales, July e hija", 3],ro14:["Rosalia y Yodi", 2],co12:["Costa y Dora", 2],gl13:["Gladis y Rosa", 2],ma10:["Marle Rudy", 4],we13:["Wendy Rodrigo", 4],lu12:["Luz Martínez", 1],fe35:["Fernando Saccatoma y Zenhya Morales", 2],lu28:["Luis Morales Rezza y familia", 3],je19:["Jesús Morales Rezza", 1],ma20:["Maruja Morales Rezza", 1],ka15:["Karim Fernández", 1],om23:["Omar Fernández y esposa", 2],ca33:["Carmen Martínez y Armando Morales", 2],al22:["Alaín Morales y esposa", 2],va23:["Vanessa Morales y David", 2],pa22:["Paolo Morales y pareja", 2],ca23:["Carlos Morales y esposa", 2],ma30:["Marcos Peña y Giovanna Morales", 2],gl23:["Glenda Martínez Paredes", 1],ch37:["Christian Curi, María Aguilar e hijas", 4],ro25:["Rocío Falconí, Max e hija", 3],ar24:["Armando Martínez Paredes", 1],cl32:["Claudio Martínez Paredes e hijos", 3],ra35:["Raúl Martínez, Ana Bautista e hijos", 4],ro23:["Roxana Martínez Paredes", 1],ca32:["Carlos Alarcón Martínez y pareja", 2],el32:["Eliana Alarcón Martínez y esposo", 2],se28:["Segundo Castro y Rosa Castro", 2],ed29:["Edward Castro y Grecia Juarez", 2],mo21:["Moisés Castro Vallejo", 1],jo20:["Jorge Castro Vallejo", 1],ma23:["Marda Martínez Paredes ", 1],mi17:["Milagros Martínez", 1],gi28:["Giannina Saldarriaga e hijos", 3],ed24:["Edward Martínez y esposa", 2],re10:["René Yañez", 1],lo24:["Lourdes Rodríguez Chocos", 1],na26:["Nathaly Chocos Sehgelmeble", 1],ma34:["Maggy Rodríguez y Emiliano Vilchez", 2],án29:["Ángela Castro y Ricardo Prada", 2],pa24:["Paola Carrazco Gutierrez", 1],ma22:["Mariela Jáuregui Ponce", 1],ed32:["Edi Rosa Gamarra y Edwar Riveros", 2],mi24:["Militza Najarro y pareja", 2],an18:["Andrea Ñaña Alfaro", 1],pa24:["Patricia Córdova Muñaqui", 1],an14:["André Zevallos", 1],jo29:["Jose Antonio Rodríguez Maravi", 1],ma13:["Mavelly Lagos", 1],gi18:["Giuliana Gutierrez", 1],ni14:["Nicole Pretell", 1],di13:["Diego Rivera ", 1],ma29:["Manuel Grados y Julie Navarro", 2],co45:["Constantino Sulópulos y Maria Fernanda Zavala", 2],at24:["Athala Daga y Jhoe López", 2],gu12:["Gustavo León", 1],se17:["Sebastian Bendezu", 1],lu11:["Luis Choque", 1],ca14:["Carlos Escobar", 1],ro14:["Roy De la Cruz", 1],mi23:["Miguel Sulca y Victoria", 2],br27:["Brian Mora y Anamaria Pingo", 2],jo23:["Jose Rodríguez y pareja", 2],ri24:["Ricardo Arteaga y pareja", 2],se24:["Sebastian Perez y pareja", 2],re16:["Renato Gutierrez", 1],ki19:["Kiara Chau y pareja", 2],sa6:["Sandro", 1],ca8:["Cachorro", 1],ga7:["Garrita", 0],of23:["Ofelia Saccatoma e hija", 2],je24:["Jesús Saccatoma y esposa", 2]};
+
+
+                 autocomplete(document.getElementById("form-nama"),document.getElementById("invitados"), nombres);
+                 </script>
             </div>
          </section>
          <!-- Wave Separator -->
