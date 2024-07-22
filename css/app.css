@@ -125,7 +125,6 @@ body::-webkit-scrollbar {
     height: 100%;
     background-color: #ca9eb8;
     z-index: 1056 !important;
-    margin: 0 auto;
 }
 
 .card-body {
