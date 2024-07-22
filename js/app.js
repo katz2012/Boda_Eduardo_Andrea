@@ -223,6 +223,7 @@ const util = (() => {
     const buka = async (button) => {
         button.disabled = true;
         document.querySelector('body').style.overflowY = 'scroll';
+        document.getElementById('home').style.display = 'initial';
         AOS.init();
         audio.play();
 
@@ -239,7 +240,7 @@ const util = (() => {
             zIndex: 1057,
         });*/
 
-        document.getElementById('home').style.display = 'initial';
+
         setTimeout(animation(),10000);
     };
 
