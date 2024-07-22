@@ -239,7 +239,7 @@ const util = (() => {
             zIndex: 1057,
         });*/
 
-
+        document.getElementById('home').style.display = 'initial';
         setTimeout(animation(),10000);
     };
 
